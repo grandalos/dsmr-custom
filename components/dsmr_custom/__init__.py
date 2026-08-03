@@ -135,7 +135,7 @@ async def to_code(config):
 
     # Platform-specific crypto library configuration
     from esphome.core import CORE
-    if not CORE.using_esp_idf:
+    if CORE.using_arduino:
         # Arduino: Use rweather/Crypto library
         cg.add_library("rweather/Crypto", "0.4.0")
     else:

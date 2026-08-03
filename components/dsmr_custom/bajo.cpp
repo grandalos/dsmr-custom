@@ -368,7 +368,7 @@ void Bajo::BAJO_process_telegram() {
             //ESP_LOGI(TAG, "0x0008 ->%02X %02X %02X %02X %02X %02X %02X %02X<-  %d", d->telegram_[8], d->telegram_[9], d->telegram_[10], d->telegram_[11], d->telegram_[12], d->telegram_[13], d->telegram_[14], d->telegram_[15], d->bytes_read_);		  	  
             //ESP_LOGI(TAG, "body   ->%02X %02X %02X %02X %02X %02X %02X %02X<-  %d", d->telegram_[d->bodyPos_], d->telegram_[d->bodyPos_+1], d->telegram_[d->bodyPos_+2], d->telegram_[d->bodyPos_+3], d->telegram_[d->bodyPos_+4], d->telegram_[d->bodyPos_+5], d->telegram_[d->bodyPos_+6], d->telegram_[d->bodyPos_+7], d->bodyPos_);		  
             //ESP_LOGI(TAG, "       ->%02X %02X %02X %02X %02X %02X %02X %02X %02X<-  %d", d->telegram_[d->bytes_read_-7], d->telegram_[d->bytes_read_-6], d->telegram_[d->bytes_read_-5], d->telegram_[d->bytes_read_-4], d->telegram_[d->bytes_read_-3], d->telegram_[d->bytes_read_-2], d->telegram_[d->bytes_read_-1], d->telegram_[d->bytes_read_], d->telegram_[d->bytes_read_+1], d->bytes_read_);	
-	        ESP_LOGI(TAG, "Telegram total bytes %d, Process time  %ums", d->bytes_read_, millis() - d->start_milis_);
+	        ESP_LOGD(TAG, "Telegram total bytes %d, Process time  %ums", d->bytes_read_, millis() - d->start_milis_);
 
             d->parse_telegram();
             d->reset_telegram_();
